@@ -1,0 +1,8 @@
+function y = partialfouriersum2 (F, T, time_grid)
+w0 = 2.*pi./T
+N = (length(F)-1)./2
+y = zeros(size(time_grid));
+for k = -N:N
+ y = y + F(k+N+1).*exp(1j.*k.*w0.*time_grid)
+end
+end
